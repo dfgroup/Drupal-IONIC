@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Noticia</ion-title>
+	<div class="titleicon">
+        <img src="http://adfp-sd.com/sites/default/files/adfp-sd.png" width="40px" />
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3 id="noticia-heading">{{ node.title }}</h3>
+    <div>
+      <img src="{{ node.Imagen.src }}">
+    </div>
+    <div id="noticia-markdown">
+      {{ node.body }}
+    </div>
+</ion-content>

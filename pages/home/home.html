@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ADFP-SD</ion-title>
+	<div class="titleicon">
+        <img src="http://adfp-sd.com/sites/default/files/adfp-sd.png" width="40px" />
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+    <ion-card *ngFor="let item of foundNews" (click)="goToDetails(item.node)">
+        <img src="{{ item.node.Imagen.src }}"/>
+        <ion-card-content>
+            {{ item.node.title }}
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-buttons start>
+      <button ion-button icon-left color="royal" [navPush]="tabla">
+        <ion-icon name="football"></ion-icon>
+        Tabla
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-right color="royal" [navPush]="fixture">
+        Calendario
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

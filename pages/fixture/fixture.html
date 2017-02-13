@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ADFP-SD</ion-title>
+	<div class="titleicon">
+        <img src="http://adfp-sd.com/sites/default/files/adfp-sd.png" width="40px" />
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+	<ion-item-group *ngFor="let matchday of foundDates">
+		<ion-item-divider color="light">{{ matchday.matchday }}</ion-item-divider>
+		<ion-item *ngFor="let item of matchday.date">
+			<h3>{{ item.date }}</h3>
+			<h4>{{ item.Estadio }}</h4>
+			<table>
+				<tr>
+					<td>{{ item.team_a }}</td>
+					<td>{{ item.score_a }}</td>
+				</tr>
+				<tr>
+					<td>{{ item.team_b }}</td>
+					<td>{{ item.score_b }}</td>
+				</tr>
+			</table>
+		</ion-item>
+	</ion-item-group>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-buttons start>
+      <button ion-button icon-left color="royal">
+        <ion-icon name="football"></ion-icon>
+        Tabla
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-right color="royal">
+        Calendario
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
